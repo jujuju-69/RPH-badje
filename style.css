@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200&display=swap');
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    position: relative;
+    overflow: hidden;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Adjust the width to scale the video */
+    height: 100%; /* Adjust the height proportionally */
+    object-fit: cover; /* Ensure it fits nicely in the header */
+    z-index: -1; /* Keeps the video in the background */
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.masa {
+    font-size: 2em;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.menu a, .register a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+.menu a:hover {
+    border: 1px solid indianred;
+    background: transparent;
+}
+
+.register a {
+    border-radius: 8px;
+    background: indianred;
+}
+
+.register a:hover {
+    border: 1px solid indianred;
+    background: transparent;
+}
+
+/* Hero Text Styles */
+.h-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 650px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.h-text span {
+    letter-spacing: 5px;
+}
+
+.h-text h1 {
+    font-size: 3.5em;
+}
+
+.h-text a {
+    text-decoration: none;
+    background: indianred;
+    padding: 10px 20px;
+    color: #fff;
+    letter-spacing: 5px;
+    transition: 0.4s;
+}
+
+.h-text a:hover {
+    border: 1px solid indianred;
+    background: transparent;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About Section */
+#abouts {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(248, 3, 3, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.2em;
+}
+
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    line-height: 1.5;
+}
+
+/* Hobbies Section */
+
+#hobbies {
+    background-color: #72cbe9;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+
+}
+
+#hobbies h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#hobbies p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.hobby-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    background-color: #636c6f;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.919);
+    overflow: hidden;
+    padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    
+
+}
+
+.hobby-item a {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-content {
+    flex: 1;
+    text-align: left;
+    color: #fff;
+
+}
+
+.hobby-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hobby-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.footer-list ul li a:hover {
+    color: indianred;
+}
+
+/* Awards Section */
+#awards {
+    background-color: #72cbe9;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+
+    
+}
+
+#awards h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.timestamp-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3131a049; /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 25, 248, 0.962); /* Shadow with a blue tint */
+}
+
+.masa {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fcf4f4; /* Light color for the text */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+iframe {
+    border-radius: 10px;
+}
+#awards {
+    background-color: #72cbe9;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+
+}
+
+.award-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    color: #fff;
+
+}
+
+.award-item {
+    width: 100%;
+    max-width: 300px;
+    background-color: #636c6f;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
+
+}
+
+.award-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.award-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.award-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #fff;
+}
+
+
+
+.award-item p {
+    font-size: 1rem;
+    color: #666;
+    padding: 0 15px 20px;
+    line-height: 1.5;
+}

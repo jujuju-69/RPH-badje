@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permainan Drag-and-Drop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .quiz-container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .drag-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .drag-item {
+            width: 120px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .drop-area {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #007bff;
+            display: inline-block;
+            border-radius: 8px;
+            margin: 0 10px;
+            position: relative;
+            padding: 10px;
+        }
+
+        .drop-area.correct {
+            background-color: #28a745;
+        }
+
+        .drop-area.wrong {
+            background-color: #dc3545;
+        }
+
+        .result {
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Extra</h1>
+        <div class="question">Tukar nombor perduanian kepada nombor perpuluhan:</div>
+
+        <div class="drag-container">
+            <div class="drag-item" id="binary1" draggable="true" ondragstart="drag(event)">1101</div>
+            <div class="drag-item" id="binary2" draggable="true" ondragstart="drag(event)">1010</div>
+        </div>
+
+        <div class="drag-container">
+            <div class="drop-area" id="dropAreaBinary1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <span>Drop Here</span>
+            </div>
+            <div class="drop-area" id="dropAreaBinary2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <span>Drop Here</span>
+            </div>
+        </div>
+
+        <div class="result hidden" id="dragResult">Betul!</div>
+
+        <a href="quiz.html" class="button">Kembali ke Menu</a>
+    </div>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const draggedElement = document.getElementById(data);
+            const dropArea = ev.target;
+
+            if (draggedElement.id === "binary1" && dropArea.id === "dropAreaBinary1") {
+                dropArea.classList.add('correct');
+                dropArea.innerHTML = "Betul! 1101 (Binary) = 13 (Decimal)";
+                document.getElementById('dragResult').textContent = 'Betul!';
+                document.getElementById('dragResult').style.color = 'green';
+            } else if (draggedElement.id === "binary2" && dropArea.id === "dropAreaBinary2") {
+                dropArea.classList.add('correct');
+                dropArea.innerHTML = "Betul! 1010 (Binary) = 10 (Decimal)";
+                document.getElementById('dragResult').textContent = 'Betul!';
+                document.getElementById('dragResult').style.color = 'green';
+            } else {
+                dropArea.classList.add('wrong');
+                dropArea.innerHTML = "Salah!";
+            }
+
+            const dragItems = document.querySelectorAll('.drag-item');
+            dragItems.forEach(item => item.setAttribute('draggable', 'false'));
+
+            document.getElementById('dragResult').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
